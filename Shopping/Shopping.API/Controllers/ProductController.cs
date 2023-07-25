@@ -21,10 +21,8 @@ namespace Shopping.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {
-            return await _context
-                            .Products
-                            .Find(p => true)
-                            .ToListAsync();
+            await Task.Delay(100);
+            return ProductContext.GetPreconfiguredProducts();
         }
     }
 }
